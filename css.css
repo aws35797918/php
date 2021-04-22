@@ -1,0 +1,217 @@
+
+body{
+    margin: 0 auto;
+    font-size: 13px;
+    color: #444;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #202020;
+  }
+  header{
+  	position: fixed;
+  	top:0;
+  	height: 50px;
+  	width: 100%;
+  	background-color: black;
+  	color:white;
+  }
+  header ul li{
+
+  	
+  	display:inline;
+  }
+  header ul li a
+  {
+  	color:white;
+  }
+  table{
+  	margin: 20px auto;
+  	width:100%;
+  }
+  .center{
+  	margin:0px auto ;
+  	
+  	max-width: 1200px;
+    min-height: calc(100vh - 50px);
+  	
+  	
+  	background-color: white;
+    padding-bottom: 50px;
+
+  }
+  .footer{
+  	padding:0 50px;
+  	display:flex;
+  	height: 50px;
+  	background-color:black;
+  	align-items:  center;
+  	justify-content:flex-end;
+    position: relative;
+    margin-top:-50px; 
+
+
+  	  }
+  .footer p{
+  	  margin:0 ;
+  	  text-align:right;
+  	  color:white; 
+  	  
+  	  
+  	  
+  	}
+  	
+   .padding{
+   padding: 50px 0px 0px;
+
+  
+  
+  
+  }
+    #flextop
+    {
+      display:flex;
+      align-items: top;
+      min-height: calc(100vh - 100px);
+    }
+
+  /*inf開始*/
+#inftop{
+	padding: 70px 0px ;
+	display: flex;
+	align-items: center;
+	height:370px; 
+  min-width: 100%;
+}
+#infimg{
+	margin: 0 3%;
+	display: inline-block;
+	width:43%;
+	
+	background-color: white; 
+	border:solid 1px;
+	border-radius: 10px;
+	height: 100%;
+	
+	
+	
+}
+#infimg img{
+
+	display:block;
+	margin: 50px auto;/*圖片垂直置中需用js更改*/
+}
+#inftable{
+	margin: 0 3%;
+	display: inline-block;
+	width:45%;
+	height: 100%;
+	
+}
+#infview{
+	padding: 20px 30px ;
+	border: solid 3px;
+	border-color: #f5f5f5;
+
+	background-color: #f5f5f5;
+	
+
+}
+
+#infview p{font-size:1.5em;
+
+    margin-block-start: 0px;
+    
+
+}
+
+
+
+
+
+#inf{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+#inf caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+#inf tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+
+td {
+  text-align: center;
+}
+
+
+  /*inf結束*/
+#listleft{
+	width: 20%;
+	display: inline-block;
+	border-right: solid 1px;
+	background-color: #afafaf
+}
+#listmiddle{
+	
+	width: 80%;
+	display: inline-block;
+}
+#listmiddle img{
+	margin: 0;
+	width: 160px;
+}
+
+a{color:black;
+text-decoration: none;
+
+
+}
+#listtable table{
+	
+	border-spacing: 5px 20px;
+
+}
+#listpage p{
+	text-align: center;
+
+}
+#listtable a:hover{
+
+	color: red;
+} 
+
+
+
+.login{
+	width:200px;
+	height:40px;
+	background-color: #afafaf;
+	border-style: none;
+	margin: 10px auto;
+	padding: 10px;
+	border-radius: 5px;
+
+}
+#logindiv{
+	text-align: center;
+	display: flex;
+	 margin: 0 auto;
+	 padding-top: 20%;
+
+	 justify-content: center;
+	 height: calc(100vh - 100px - 20%);
+}
+#us{
+	padding: 20px;
+	display: flex;
+	align-items:top;
+}
