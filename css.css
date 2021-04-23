@@ -215,3 +215,8 @@ text-decoration: none;
 	display: flex;
 	align-items:top;
 }
+#madiv{
+  display: flex;
+  justify-content:center;
+  text-align: center;
+}

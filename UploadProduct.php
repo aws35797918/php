@@ -60,8 +60,7 @@
 
 
         <?php
-        	$link=mysqli_connect("127.0.0.1","admin","admin","sy");
-			mysqli_query($link,"SET NAMES 'utf8'");
+        	include("dblink.php");
 
 			if(isset($_FILES['Photo']['name']))//確認有沒有接收到POST
 			{

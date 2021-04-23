@@ -32,7 +32,10 @@
 			echo "<tr><td>處理器</td>".td($row[2])."</tr>";
 			echo "<tr><td>螢幕尺寸</td>".td($row[3]." 吋")."</tr>";
 			echo "<tr><td>主相機像素</td>".td($row[4]." 萬畫素")."</tr>";
-			echo "<tr><td>電池容量</td>".td($row[7]." mah")."</tr>";
+			echo "<tr><td>電池容量</td>";
+			if($row[7]==0){echo "<td><p>無資料</p></td></tr>";}
+			else {echo td($row[7]." mAh")."</tr>";}
+
 			if($row[8]==1){$flag="是";}
 			else$flag="否";
 
