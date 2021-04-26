@@ -51,7 +51,7 @@
 
 
 
-			</div>"
+			</div>";
 
 			echo "<div id='infview'><p>詳細介紹</p>".nl2br($row[9])."</div>";//詳細資訊
 						}
