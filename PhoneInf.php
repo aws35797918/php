@@ -42,6 +42,17 @@
 			echo "<tr><td>5G</td>".td($flag)."</tr>";
 			echo "</table></div></div>";
 
+			echo"<div class='GoBuyCar'>
+
+			
+
+
+
+
+
+
+			</div>"
+
 			echo "<div id='infview'><p>詳細介紹</p>".nl2br($row[9])."</div>";//詳細資訊
 						}
 			

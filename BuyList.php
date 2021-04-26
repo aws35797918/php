@@ -8,6 +8,7 @@
 	</head>
 	<body >
 	<?php
+	
 	include("header.php");
 	?>
 
@@ -26,6 +27,7 @@
 		<div id="listmiddle"> 
 
 			 <?php
+			 
 
 			$round=0;
 			include("dblink.php");
