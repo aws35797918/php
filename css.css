@@ -272,4 +272,8 @@ text-decoration: none;
   background-color:#bebebe; 
   
 }
-
+#infview .detail
+{
+  width:100%;
+  height: 30vh;
+}

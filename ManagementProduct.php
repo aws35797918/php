@@ -63,7 +63,7 @@
 	           	
 	           	echo"<td>".$row['Phone']."</td>";
 	           	echo"<td>".$row['Brand']."</td>";
-	           	echo"<td><a href='#'>編輯</a></td>";
+	           	echo"<td><a href='EditPhoneInf.php?phone=".$row['Phone']."'>編輯</a></td>";
 	           	echo"<td><a href='#'>刪除</a></td>";
 	           	echo"<tr>";
 	           }
