@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-04-21 16:50:33
+-- 產生時間： 2021-04-28 10:44:29
 -- 伺服器版本： 10.4.18-MariaDB
 -- PHP 版本： 8.0.3
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `sy`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `member`
+--
+
+CREATE TABLE `member` (
+  `Mno` int(11) NOT NULL,
+  `Account` text NOT NULL,
+  `Password` text NOT NULL,
+  `Email` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `member`
+--
+
+INSERT INTO `member` (`Mno`, `Account`, `Password`, `Email`) VALUES
+(1, 'aws35797918', 'czc3NjYwMDY=', 'aws35797918@gmail.com'),
+(2, 'admin', 'YWRtaW4xMjM=', 'admin123@123.456');
 
 -- --------------------------------------------------------
 
@@ -57,6 +78,84 @@ INSERT INTO `phonebrand` (`Number`, `Phone`, `Brand`) VALUES
 (48, 'realme 7 5G', 'realme'),
 (49, 'vivo X60 Pro', 'VIVO'),
 (50, 'vivo X50 Pro', 'VIVO');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `phonecolor`
+--
+
+CREATE TABLE `phonecolor` (
+  `Phone` text NOT NULL,
+  `ColorNum` int(11) NOT NULL,
+  `Color` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `phonecolor`
+--
+
+INSERT INTO `phonecolor` (`Phone`, `ColorNum`, `Color`) VALUES
+('Apple iPhone 12 Pro Max', 4, '銀'),
+('Apple iPhone 12 Pro Max', 4, '石墨'),
+('Apple iPhone 12 Pro Max', 4, '金'),
+('Apple iPhone 12 Pro Max', 4, '太平洋藍'),
+('Apple iPhone 12 Pro', 4, '太平洋藍'),
+('Apple iPhone 12 Pro', 4, '石墨'),
+('Apple iPhone 12 Pro', 4, '銀'),
+('Apple iPhone 12 Pro', 4, '金'),
+('Apple iPhone 12', 6, '紫'),
+('Apple iPhone 12', 6, '藍'),
+('Apple iPhone 12', 6, '白'),
+('Apple iPhone 12', 6, '黑'),
+('Apple iPhone 12', 6, '綠'),
+('Apple iPhone 12', 6, '紅'),
+('Apple iPhone 12 mini', 6, '紫'),
+('Apple iPhone 12 mini', 6, '白'),
+('Apple iPhone 12 mini', 6, '黑'),
+('Apple iPhone 12 mini', 6, '紅'),
+('Apple iPhone 12 mini', 6, '綠'),
+('Apple iPhone 12 mini', 6, '藍'),
+('SAMSUNG Galaxy A52 5G', 4, '炫紫豆豆'),
+('SAMSUNG Galaxy A52 5G', 4, '潮黑豆豆'),
+('SAMSUNG Galaxy A52 5G', 4, '沁白豆豆'),
+('SAMSUNG Galaxy A52 5G', 4, '晶藍豆豆'),
+('SAMSUNG Galaxy A42 5G', 3, '絢幻黑'),
+('SAMSUNG Galaxy A42 5G', 3, '絢幻白'),
+('SAMSUNG Galaxy A42 5G', 3, '絢幻灰'),
+('SAMSUNG Galaxy S21 Ultra 5G', 4, '星魅灰'),
+('SAMSUNG Galaxy S21 Ultra 5G', 4, '星魅白'),
+('SAMSUNG Galaxy S21 Ultra 5G', 4, '星魅粉'),
+('SAMSUNG Galaxy S21 Ultra 5G', 4, '星魅紫'),
+('OPPO Reno5 5G', 2, '星夜黑'),
+('OPPO Reno5 5G', 2, '幻彩銀'),
+('OPPO A73 5G', 2, '紅'),
+('OPPO A73 5G', 2, '黑'),
+('OPPO Reno4 5G', 3, '紫'),
+('OPPO Reno4 5G', 3, '藍'),
+('OPPO Reno4 5G', 3, '黑'),
+('OPPO A53', 2, '能量黑'),
+('OPPO A53', 2, '異想藍'),
+('Sony Xperia 1 II', 3, '耀黑'),
+('Sony Xperia 1 II', 3, '羽白'),
+('Sony Xperia 1 II', 3, '鏡紫'),
+('Sony Xperia 10 II', 4, '薄荷綠'),
+('Sony Xperia 10 II', 4, '黑色'),
+('Sony Xperia 10 II', 4, '藍色'),
+('Sony Xperia 10 II', 4, '白色'),
+('Sony Xperia 5 II', 4, '療癒黑'),
+('Sony Xperia 5 II', 4, '玫蜜粉'),
+('Sony Xperia 5 II', 4, '淨透藍'),
+('Sony Xperia 5 II', 4, '靜謐灰'),
+('realme X3', 2, '冰川藍'),
+('realme X3', 2, '極地白'),
+('realme X50', 2, '仙蹤(綠)'),
+('realme X50', 2, '極地(藍)'),
+('realme 7 5G', 2, '破曉之光(藍)'),
+('realme 7 5G', 2, '青出於藍(綠)'),
+('vivo X60 Pro', 2, '迷霧黑'),
+('vivo X60 Pro', 2, '冰極光'),
+('vivo X50 Pro', 1, '阿爾法灰');
 
 -- --------------------------------------------------------
 
@@ -102,9 +201,65 @@ INSERT INTO `phoneinformation` (`Phone`, `OsVer`, `ProcessorName`, `ScreenSize`,
 ('vivo X60 Pro', 'Android 11', 'Snapdragon 870', 6.56, 4800, 12, 256, 4200, 1, 'vivo X60 Pro 具備微雲台 2.0 防手震鏡頭\r\n6.56 吋 120Hz 更新率螢幕\r\nvivo X60 Pro 配置 6.56 吋 FHD+ AMOLED「挖孔」螢幕，採用 3D 曲面螢幕設計，支援 120Hz 螢幕更新率、240Hz 觸控採樣率，提供極為順暢的操作表現；螢幕通過 HDR10+ 認證，具備 SGS Eye Care Display 護眼認證，提供高品質視覺體驗。\r\n\r\n新雙色雲階設計\r\nvivo X60 Pro 維持薄化機身風格，機身厚度僅有 7.59mm；背蓋延續雙色雲階設計，採用緞面 AG 玻璃結構處理，搭配防指紋工藝，打造如絲綢般的觸感與視覺體驗；共有「冰極光」、「迷霧黑」等顏色款式。\r\n\r\n高通驍龍 870\r\nvivo X60 Pro 搭載台積電 7nm 製程的 Qualcomm Snapdragon 870 行動平台，內建 12GB RAM + 256GB ROM，採用雙 Nano SIM 卡槽設計，支援 5G + 4G 雙卡雙待。具備 Wi-Fi 5、藍牙 5.1、NFC 功能。\r\n\r\n微雲台 2.0\r\nvivo X60 Pro 搭載蔡司三鏡頭主相機，後置 4,800 萬畫素微雲台 2.0 主鏡頭（5 軸防手震）+ 1,300 萬畫素 120 度超廣角鏡頭（2.5cm 微距）+ 1,300 萬畫素人像鏡頭，具備蔡司 Biotar 人像風格，支援極夜模式 2.0 功能。\r\n\r\nvivo X60 Pro 功能特色\r\n◎ 5G + 4G 雙卡雙待\r\n◎ Android 11 作業系統、Funtouch OS 11.1 操作介面\r\n◎ 6.56 吋 2,376 x 1,080pixels 解析度 AMOLED 螢幕（120Hz 螢幕更新率）\r\n◎ Qualcomm Snapdragon 870 八核心處理器\r\n◎ 12GB RAM / 256GB ROM\r\n◎ 前置 3,200 萬畫素\r\n◎ 後置 4,800 萬畫素 + 1,300 萬畫素 + 1,300 萬畫素主相機\r\n◎ Wi-Fi 5、藍牙 5.1、NFC\r\n◎ 臉部辨識、螢幕指紋辨識\r\n◎ 4,200mAh 電池\r\n◎ 採用 USB Type-C 規格，支援 33W FlashCharge 快充\r\n◎ 盒裝配件：33W 電源充電器、USB Type-C 數據線、3.5mm 耳機、Type-C to 3.5mm 音源線、透明保護套、SIM 卡插針\r\n\r\nvivo X60 Pro 即日起開放預購，預計 2021 年 4 月 1 日在台灣上市，以上規格僅供參考，手機王隨時補充最新資料。'),
 ('vivo X50 Pro', 'Android 10', 'Snapdragon 765G', 6.56, 4800, 8, 256, 4315, 1, 'vivo X50 Pro 支援微雲台防手震\r\n6.56 吋曲面螢幕\r\nvivo X50 Pro 配置 6.56 吋 2,376 x 1,080pixels 解析度「挖孔」AMOLED 螢幕，螢幕採用 55 度微曲面設計，擁有 92% 螢幕占比，支援 90Hz 螢幕更新率、180Hz 觸控採樣率，具備 DCI-P3 廣色域、103％ NTSC 色彩飽和度、6,000,000：1 對比度，通過 HDR10 與 HDR10+ 顯示認證。機身選用玻璃背蓋搭配金屬中框設計，提供唯美華麗的視覺表現；支援螢幕指紋辨識功能，有效防止個人隱私不輕易外洩，還可做為行動交易前的身分認證使用。\r\n\r\n5G 上網\r\nvivo X50 Pro 運行 Android 10 作業系統、Funtouch OS 10.5 操作介面，內建 Qualcomm Snapdragon 765G, 2.4GHz 八核心處理器、8GB LPDDR4X RAM / 256GB UFS2.1 ROM，支援 5G + 4G 雙卡雙待，提供 NSA 非獨立組網，擁有藍牙 5.1、NFC 功能。音效方面通過 Hi-Res AUDIO 認證，搭載 AK4377A 獨立音訊解碼晶片，帶來 Hi-Fi 音質表現；此外，配備 4,315mAh 電池，具備 33W vivo Flash Charge 閃充。\r\n\r\n5 倍光學變焦\r\nvivo X50 Pro 後置四鏡頭主相機，首度搭載微雲台主鏡頭設計，將以往用於專業攝影設備的「雲台」功能重現於手機之中，解決手持拍照容易產生的晃動問題，同時採用「異形結構磁動框架」搭配雙滾珠懸架設計，防震角度可達 OIS 光學防手震的 3 倍；分別配置 4,800 萬畫素主鏡頭（Sony IMX598、7P 鏡頭、F1.6 光圈） +  1,300 萬畫素人像（50mm 等效焦段、F2.46 光圈）+ 800 萬畫素潛望式望遠（5 倍光學變焦、60 倍數位變焦、F3.4 光圈）+ 800 萬畫素廣角 / 微距（120 度超廣角、2.5cm 微距、F2.2 光圈）鏡頭，前置 3,200 萬畫素鏡頭、F2.45 光圈，支援人像美顏、臉部解鎖功能。\r\n\r\nvivo X50 Pro 功能特色\r\n◎ 5G + 4G 雙卡雙待\r\n◎ Android 10 作業系統、Funtouch OS 10.5 操作介面\r\n◎ 6.56 吋 2,376 x 1,080pixels 解析度 AMOLED 螢幕（90Hz 螢幕更新率）\r\n◎ Qualcomm Snapdragon 765G, 2.4GHz 八核心處理器\r\n◎ 8GB RAM / 256GB ROM\r\n◎ 3,200 萬畫素前鏡頭\r\n◎ 4,800 萬畫素 + 1,300 萬畫素 + 800 萬畫素 + 800 萬畫素主相機\r\n◎ 微雲台防手震架構、5 倍光學變焦\r\n◎ Wi-Fi、藍牙 5.1、NFC\r\n◎ 螢幕指紋辨識、臉部解鎖\r\n◎ 4,315mAh 電池\r\n◎ 採用 USB Type-C 規格，支援 33W vivo Flash Charge 閃充\r\n◎ 盒裝配件：33W 電源充電器、USB Type-C 數據線、3.5mm 耳機、Type-C to 3.5mm 音源線、透明保護套、SIM 卡插針');
 
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `phonememory`
+--
+
+CREATE TABLE `phonememory` (
+  `Phone` text NOT NULL,
+  `MemoryNum` int(11) NOT NULL,
+  `Memory` text NOT NULL,
+  `Price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `phonememory`
+--
+
+INSERT INTO `phonememory` (`Phone`, `MemoryNum`, `Memory`, `Price`) VALUES
+('Apple iPhone 12 Pro Max', 3, '128', 36088),
+('Apple iPhone 12 Pro Max', 3, '256', 38500),
+('Apple iPhone 12 Pro Max', 3, '512', 47288),
+('Apple iPhone 12 Pro', 3, '128', 32900),
+('Apple iPhone 12 Pro', 3, '256', 25588),
+('Apple iPhone 12 Pro', 3, '512', 42499),
+('Apple iPhone 12', 3, '64', 26900),
+('Apple iPhone 12', 3, '128', 28500),
+('Apple iPhone 12', 3, '256', 32000),
+('Apple iPhone 12 mini', 3, '64', 23900),
+('Apple iPhone 12 mini', 3, '128', 25500),
+('Apple iPhone 12 mini', 3, '256', 29000),
+('SAMSUNG Galaxy A52 5G', 2, '128', 13500),
+('SAMSUNG Galaxy A52 5G', 2, '256', 12050),
+('SAMSUNG Galaxy A42 5G', 2, '8/128', 9550),
+('SAMSUNG Galaxy A42 5G', 2, '6/128', 8290),
+('SAMSUNG Galaxy S21 Ultra 5G', 2, '128', 25900),
+('SAMSUNG Galaxy S21 Ultra 5G', 2, '256', 27900),
+('OPPO Reno5 5G', 1, '128', 13990),
+('OPPO A73 5G', 1, '128', 6790),
+('OPPO Reno4 5G', 1, '128', 9750),
+('OPPO A53', 1, '64', 4650),
+('Sony Xperia 1 II', 1, '256', 22900),
+('Sony Xperia 10 II', 1, '128', 8790),
+('Sony Xperia 5 II', 1, '8/128', 8790),
+('realme X3', 1, '8/128', 7990),
+('realme X50', 2, '8/128', 7590),
+('realme X50', 2, '6/128', 5990),
+('realme 7 5G', 1, '8/128', 7990),
+('vivo X60 Pro', 1, '12/256', 23900),
+('vivo X50 Pro', 1, '8/256', 13680);
+
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`Mno`);
 
 --
 -- 資料表索引 `phonebrand`
@@ -115,6 +270,12 @@ ALTER TABLE `phonebrand`
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member`
+--
+ALTER TABLE `member`
+  MODIFY `Mno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `phonebrand`

@@ -18,18 +18,18 @@
 
 			$result=mysqli_query($link,$sql);
 
-			echo "<h1>編輯頁面</h1>";
+			 echo "<h1 style='padding: 0px 40px;margin: 20px 0 -40px;'>編輯頁面</h1>";
 
-			echo"<form action='EditPhoneInf.php' method='get'>";
+			echo"<form action='EditPhoneInf.php' method='post' enctype='multipart/form-data'>";
 			if(mysqli_num_rows($result)>0)
 			{
 				
 				while($row = mysqli_fetch_array($result))
 				{
-				echo "<div id='inftop'><div id='infimg'><img src='img/".$row[0].".jpg'><br><input type='file' name='Photo'></div>";//照片
+				echo "<div id='inftop'><div id='infimg'><img src='img/".$row[0].".jpg'><br><input type='file' name='Photo'><br>提示:若沒更新請按ctrl+F5重新整理</div>";//照片
 				echo"<div id='inftable'><table id='inf'> <caption>手機規格</caption>";//規格表
-				
 				echo "<tr><td>手機名稱</td>".td("<input class='pe' type='text' value='$row[0]' name='pn' readonly='readonly'>")."</tr>";
+				echo "<tr><td>手機品牌</td>".td("<input class='pe' type='text' value='$row[10]' name='pb' >")."</tr>";
 				echo "<tr><td>系統</td>".td("<input class='pe' type='text' value='$row[1]' name='os'>")."</tr>";
 				echo "<tr><td>處理器</td>".td("<input class='pe' type='text' value='$row[2]' name='ps'>")."</tr>";
 				echo "<tr><td>螢幕尺寸</td>".td("<input class='pe' type='text' value='$row[3]' name='sc'>"." 吋")."</tr>";
@@ -54,12 +54,12 @@
 				echo "</table></div></div>";
 
 
-				echo "<div id='infview'><p>詳細介紹</p><textarea class='detail' name='Detail' >".$row[9]."</textarea></div>";//詳細資訊
+				echo "<div id='infview'><p>詳細介紹</p><textarea class='detail' name='Detail' >".$row[9]."</textarea><br><input type='submit' value='更新'></div>";//詳細資訊
 							}
 				
 
 			}
-			echo "<input type='submit' value='更新'></form>";
+			echo "</form>";
 
 			
 		}
@@ -68,16 +68,17 @@
 			      return "<td><p>$td</p></td>";
 			      
 			    }
-		if(isset($_GET['ps'])&&isset($_GET['os']))
+		if(isset($_POST['ps'])&&isset($_POST['os']))
 		{
-			$pn=$_GET['pn'];
-			$os=$_GET['os'];
-			$ps=$_GET['ps'];
-			$sc=$_GET['sc'];
-			$ca=$_GET['ca'];
-			$bt=$_GET['bt'];
-			$fg=$_GET['fg'];
-			$detail=$_GET['Detail'];
+			$pn=$_POST['pn'];
+			$os=$_POST['os'];
+			$ps=$_POST['ps'];
+			$sc=$_POST['sc'];
+			$ca=$_POST['ca'];
+			$bt=$_POST['bt'];
+			$fg=$_POST['fg'];
+			$detail=$_POST['Detail'];
+			$alert="";
 
 			$sql="UPDATE phoneinformation SET 
 			OsVer='$os', 
@@ -92,9 +93,27 @@
 
 			$result=mysqli_query($link,$sql);
 			if($result){
-				echo"<script>alert('更新成功');document.location.href='ManagementProduct.php';</script>";
+				$alert.="資料更新成功\\n";
 			}
-			else{echo"<script>alert('$sql');</script>";}
+
+			$pb=$_POST['pb'];
+			$sql="UPDATE phonebrand SET Brand='$pb' WHERE Phone='$pn'";
+			$result=mysqli_query($link,$sql);
+			if($result){
+				$alert.="品牌更新成功\\n";
+			}
+
+
+
+
+			if(isset($_FILES['Photo']['tmp_name']))
+			{
+				$tmp=$_FILES['Photo']['tmp_name'];
+				move_uploaded_file($tmp,"./img/".$pn.".jpg");
+				$alert.="照片更新成功";
+			}
+			echo "<script>alert('$alert')</script>";
+			
 		}
 		
 	
