@@ -320,4 +320,51 @@ text-decoration: none;
 #bpn
 {
   width:25%;
+
+}
+.totalprice
+{
+  background: none;
+  border:none;
+  width:60px;
+  color:white;
+}
+.BuyCarForm{
+  
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: gray;
+  color:white;
+
+}
+.BuyCarTable
+{
+  min-height:calc(100vh - 163px);
+  margin: 0 20px;
+}
+.BuyCarTable table
+{
+border-collapse: collapse;
+
+}
+.BuyCarTable tr:hover
+{
+  background-color: rgba(135,206,235, 0.9);
+}
+.BuyCarTable tr
+{
+  border:1px black solid;
+
+}
+.BuyCarTable th,.BuyCarTable td
+{
+  padding: 10px;
+}
+.BuyCarTable th
+{
+  background-color:gray;
+  color:white;
+
 }

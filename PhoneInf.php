@@ -45,7 +45,7 @@
 			//顏色選擇
 			echo"<div class='GoBuyCar'>
 
-			<form action='BuyCar' method='post'>
+			<form action='BuyCar.php' method='post'>
 			<input type='text' class='BuyItem' id='bpn' name='phone' value='$row[0]' readonly='readonly'>
 			<label for='color'>顏色</label><select name='color' class= 'BuyItem'>
 			<option>選顏色</option>
