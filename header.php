@@ -1,6 +1,8 @@
 <?php if(isset($_GET['logout']))
 			 {
 			 		setcookie("user", "", time()-30000);
+			 		session_start();
+			 		unset($_SESSION['gwc']);
 			 		echo "<script>alert('登出成功!');window.location.href='BuyList.php';</script>";
 			  }
 ?>

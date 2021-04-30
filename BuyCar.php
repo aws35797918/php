@@ -44,8 +44,9 @@
 
 		
 	}
-
+	include("dblink.php");
 	session_start();
+
 	// unset($_SESSION['gwc']);
 	// $arr[1]=new BuyCarItem;
 	// 	$arr[1]->SetValue($_POST['phone'],$_POST['color'],$_POST['mem'],1,$_POST['price']);
@@ -71,12 +72,22 @@
 		}
 		else
 		{
+			//存入購物車
 			if(empty($_SESSION["gwc"]))
 			{
+
 			//1.購物車是空的，第一次點選新增購物車
 				$arr[0]=new BuyCarItem;
 				$arr[0]->SetValue($_POST['phone'],$_POST['color'],$_POST['mem'],1,$_POST['price']);
 				$_SESSION["gwc"]=$arr;
+				$acc=$_COOKIE['user'];
+				$ph=$_SESSION["gwc"][0]->phone;
+				$color=$_SESSION["gwc"][0]->color;
+				$mem=$_SESSION["gwc"][0]->mem;
+				$count=1;
+				$price=$_SESSION["gwc"][0]->price;
+				$sql="INSERT INTO buycar (Account,Phone,Color,Memory,Count,Price) VALUES ('$acc','$ph','$color','$mem',$count,$price)";
+				mysqli_query($link,$sql);
 				
 			}
 			else
@@ -89,14 +100,30 @@
 					{
 						$_SESSION["gwc"][$i]->num+=1;
 						$flag=1;
+						$ph=$_SESSION["gwc"][$i]->phone;
+						$acc=$_COOKIE['user'];
+						$count=$_SESSION["gwc"][$i]->num;
+						
+						$sql="UPDATE buycar SET Count=$count WHERE Account='$acc' AND Phone ='$ph'";
+						mysqli_query($link,$sql);
 					}
 				}
 				if($flag==0)
 				{
+				$SessCount=(count($_SESSION["gwc"]));
 				$arr=$_SESSION["gwc"];
-				$arr[(count($_SESSION["gwc"]))]=new BuyCarItem;
-				$arr[(count($_SESSION["gwc"]))]->SetValue($_POST['phone'],$_POST['color'],$_POST['mem'],1,$_POST['price']);
+				$arr[$SessCount]=new BuyCarItem;
+				$arr[$SessCount]->SetValue($_POST['phone'],$_POST['color'],$_POST['mem'],1,$_POST['price']);
 				$_SESSION["gwc"]=$arr;
+
+				$acc=$_COOKIE['user'];
+				$ph=$_SESSION["gwc"][$SessCount]->phone;
+				$color=$_SESSION["gwc"][$SessCount]->color;
+				$mem=$_SESSION["gwc"][$SessCount]->mem;
+				$count=1;
+				$price=$_SESSION["gwc"][$SessCount]->price;
+				$sql="INSERT INTO buycar (Account,Phone,Color,Memory,Count,Price) VALUES ('$acc','$ph','$color','$mem',$count,$price)";
+				mysqli_query($link,$sql);
 				}	
 
 				
@@ -106,9 +133,17 @@
 	if(isset($_GET['del']))
 	{
 		$del=$_GET['del'];
+		
+		$acc=$_COOKIE['user'];
+		$ph=$_SESSION["gwc"][$del]->phone;
+		$sql="DELETE FROM buycar WHERE Account='$acc' AND Phone ='$ph'";
+		mysqli_query($link,$sql);
+		
+
 		unset($_SESSION["gwc"][$del]);
 		$_SESSION["gwc"]=array_values($_SESSION["gwc"]);
 	}
+
 	if(isset($_SESSION['gwc']))
 	{	
 		if(isset($_GET['chnum']))
@@ -116,6 +151,17 @@
 			$num=(int)$_GET['chnum'];
 			$value=$_GET['chva'];
 			$_SESSION['gwc'][$num]->num=$value;
+
+
+			$ph=$_SESSION["gwc"][$num]->phone;
+			$acc=$_COOKIE['user'];
+			$count=$_SESSION["gwc"][$num]->num;
+			
+			$sql="UPDATE buycar SET Count=$count WHERE Account='$acc' AND Phone ='$ph'";
+			mysqli_query($link,$sql);
+
+
+
 		}
 		$totalprice=0;
 
@@ -137,19 +183,20 @@
 					{echo "<option value='$j'selected='selected'>$j</option>";}
 			}
 			echo"</select></td>";
-			echo "<td>".$_SESSION["gwc"][$i]->price."</td>";
+			echo "<td>$".number_format($_SESSION["gwc"][$i]->price)."</td>";
 			echo"<td><a href='BuyCar.php?del=$i'>刪除</a></td>";
 			echo "</tr>";
 			$totalprice+=($_SESSION["gwc"][$i]->price*$_SESSION["gwc"][$i]->num);
 		}
 		echo"</table></div>";
-		echo "<form class='BuyCarForm'><label for='totalprice'>總價$</label><input type='text' class='totalprice' name='totalprice' value='$totalprice' readonly='readonly'>
+		$ftotalprice=number_format($totalprice);
+		echo "<form class='BuyCarForm' action='BuyFinal.php' method='get'><label for='totalprice'>總價:</label><input type='text' class='totalprice' name='totalprice' value='\$$ftotalprice' readonly='readonly'>
 		<input type='submit'  value='結帳'>
 		</form>";
 		
 	}
 
-
+	
 	
 
 	

@@ -8,10 +8,32 @@
 </head>
 <body>
     <?php include("header.php");
+
+    class BuyCarItem
+    {
+        // public Setname
+        public $phone;
+        public $color;
+        public $mem;
+        public $num;
+        public $price;
+        public function SetValue($phone,$color,$mem,$num,$price)
+        {
+            $this->phone=$phone;
+            $this->color=$color;
+            $this->mem=$mem;
+            $this->num=$num;
+            $this->price=$price;
+        }
+
+
+        
+    }
         if(isset($_POST['account']))
         {
             
             include("dblink.php");
+
             $ac=$_POST['account'];
             $pw=$_POST['password'];
             $sql="SELECT Password FROM member WHERE Account='$ac'";
@@ -24,7 +46,30 @@
                     if($row[0]==base64_encode($pw))
                     {
                         setcookie("user",$ac,time()+3600);
+                        session_start();
+                        
+                        $bsql="SELECT * FROM buycar WHERE Account='".$ac."'";
+                        $bresult=mysqli_query($link,$bsql);
+                        if(mysqli_num_rows($bresult)>0)
+                        {
+                            $c=0;
+
+                            while($brow = mysqli_fetch_array($bresult))
+                            {
+                                $arr[$c] = new BuyCarItem;
+
+                                $arr[$c]->SetValue($brow[1],$brow[2],$brow[3],$brow[4],$brow[5] );
+
+                                $c++;
+
+                            }
+                            $_SESSION['gwc']=$arr;
+                        }
+
+
+
                         header("Location:BuyList.php");
+
 
                     }
                     else
