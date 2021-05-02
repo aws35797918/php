@@ -368,3 +368,16 @@ border-collapse: collapse;
   color:white;
 
 }
+.BuyFinalForm > label
+{
+  width:100px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.BuyFinalForm{
+  line-height: 30px;
+  text-align: right; 
+}
+.BuyFinalForm [type='submit']{
+    margin-top: 10px;
+}

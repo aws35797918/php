@@ -22,7 +22,7 @@
 		<a href="#"><div>設定常用地址</div></a>
 	</div>
 	<div class="mc2">
-		<a href="#"><div>訂單查詢</div></a>
+		<a href="SearchForm.php"><div>訂單查詢</div></a>
 		<a href="#"><div>我的最愛</div></a>
 	</div>
 

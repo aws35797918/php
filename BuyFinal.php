@@ -38,11 +38,11 @@
 	            }
 	            echo"<tr><td colspan='6'>總價為:\$$totalprice</td></tr>";
 	            echo"</table>
-	            <form method='get' action='BuyFinal.php'>
+	            <form method='get' class='BuyFinalForm' action='BuyFinal.php'>
 				
-				<label for='name'>收件人</label><input name='name' type='text'><br> 
-				<label for='tel'>電話</label><input name='tel' type='text'><br>
-				<label for='add'>地址</label><input name='add' type='text'><br>
+				<label for='name'>收件人:</label><input name='name' type='text'><br> 
+				<label for='tel'>電話:</label><input name='tel' type='text'><br>
+				<label for='add'>地址:</label><input name='add' type='text'><br>
 				<input type='submit' value='確認訂單'>
 				</form>
 
