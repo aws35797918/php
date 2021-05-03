@@ -7,7 +7,11 @@
 	<title>Document</title>
 </head>
 <body>
-	<?php include("header.php");?>
+	<?php 
+
+	
+
+	include("header.php");?>
 	<div id="flextop">
 		<?php
 		include("adminleft.php");
@@ -60,6 +64,7 @@
 
 
         <?php
+        
         	include("dblink.php");
 
 			if(isset($_FILES['Photo']['name']))//確認有沒有接收到POST

@@ -37,14 +37,43 @@
 	            	$totalprice+=$row[5];
 	            }
 	            echo"<tr><td colspan='6'>總價為:\$$totalprice</td></tr>";
-	            echo"</table>
-	            <form method='get' class='BuyFinalForm' action='BuyFinal.php'>
+	            echo"</table>";
+	            echo"<form method='get' action='BuyFinal.php'>
+	            <table>";
+
+	            $asql="SELECT * FROM addressee WHERE Account='$ac'";
+	            $aresult=mysqli_query($link,$asql);
+			    if(mysqli_num_rows($aresult)>0)
+		        {	
+		        	while($arow = mysqli_fetch_array($aresult))
+		            {
+		            	echo"<tr>";
+		            	echo "<td><input type='radio' name='add' value='$arow[0]'id='addadd'></td>";		        
+		            	echo "<td> $arow[2]<br> $arow[3]<br> $arow[4]</td>";
+		            	echo"</tr>";
+		            	
+		            }
+
+		        }
+
+
+
+
+
+	            echo"
+				<tr>
+				<td><input type='radio' name='add' id='addadd'></td>
+				<td>
+				<label for='name'>收件人</label><input name='name' type='text'><br> 
+				<label for='tel'>電話</label><input name='tel' type='text'><br>
+				<label for='add'>地址</label><input name='add' type='text'><br>
 				
-				<label for='name'>收件人:</label><input name='name' type='text'><br> 
-				<label for='tel'>電話:</label><input name='tel' type='text'><br>
-				<label for='add'>地址:</label><input name='add' type='text'><br>
+				</td></tr>
+				</table>
 				<input type='submit' value='確認訂單'>
 				</form>
+				
+				
 
 
 	            </div>";
