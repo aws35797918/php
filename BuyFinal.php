@@ -5,12 +5,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css.css" /> 
 	<title>Document</title>
+	<script type="text/javascript">
+		function openform()
+		{
+			document.getElementById('addform1').disabled=false;
+			document.getElementById('addform2').disabled=false;
+			document.getElementById('addform3').disabled=false;
+		}
+		function closeform()
+		{
+			document.getElementById('addform1').disabled=true;
+			document.getElementById('addform2').disabled=true;
+			document.getElementById('addform3').disabled=true;
+		}
+	</script>
 </head>
 <body>
 	<?php include("header.php");?>
 	<?php
+	$ac=$_COOKIE['user'];
+	include ("dblink.php");
 	if(isset($_COOKIE['user']))
 	{
+		$ac=$_COOKIE['user'];
+		include ("dblink.php");
 		if(isset($_GET['totalprice'])&&$_GET['totalprice']!="$0")
 		{
 			include ("dblink.php");
@@ -38,7 +56,7 @@
 	            }
 	            echo"<tr><td colspan='6'>總價為:\$$totalprice</td></tr>";
 	            echo"</table>";
-	            echo"<form method='get' action='BuyFinal.php'>
+	            echo"<form method='get' action='BuyFinal.php'class='BuyFinalForm'>
 	            <table>";
 
 	            $asql="SELECT * FROM addressee WHERE Account='$ac'";
@@ -48,8 +66,8 @@
 		        	while($arow = mysqli_fetch_array($aresult))
 		            {
 		            	echo"<tr>";
-		            	echo "<td><input type='radio' name='add' value='$arow[0]'id='addadd'></td>";		        
-		            	echo "<td> $arow[2]<br> $arow[3]<br> $arow[4]</td>";
+		            	echo "<td><input type='radio' name='chadd' value='$arow[0]'onclick='closeform()'></td>";		        
+		            	echo "<td><font class='fonta'>收件人</font><font class='fontb'>$arow[2]</font><br><font class='fonta'>電話</font><font class='fontb'>$arow[3]</font><br><font class='fonta'>地址</font><font class='fontb'>$arow[4]</font></td>";
 		            	echo"</tr>";
 		            	
 		            }
@@ -62,11 +80,11 @@
 
 	            echo"
 				<tr>
-				<td><input type='radio' name='add' id='addadd'></td>
+				<td><input type='radio' name='chadd' onclick='openform()'></td>
 				<td>
-				<label for='name'>收件人</label><input name='name' type='text'><br> 
-				<label for='tel'>電話</label><input name='tel' type='text'><br>
-				<label for='add'>地址</label><input name='add' type='text'><br>
+				<label for='name'>收件人</label><input name='name' id='addform1' type='text' disabled ><br> 
+				<label for='tel'>電話</label><input name='tel' id='addform2' type='text' disabled><br>
+				<label for='add'>地址</label><input name='add' id='addform3' type='text' disabled ><br>
 				
 				</td></tr>
 				</table>
@@ -84,16 +102,51 @@
 		}
 		elseif(isset($_GET['name'])&&!empty($_GET['name'])&&!empty($_GET['add'])&&!empty($_GET['tel']))
 		{
-			include ("dblink.php");
+			
 			$name=$_GET['name'];
 			$add=$_GET['add'];
 			$tel=$_GET['tel'];
+			final2($name,$add,$tel);
+			$sql="INSERT INTO addressee(Account,Name,Telephone,Address) VALUES('$ac','$name','$tel','$add')";
+			$result=mysqli_query($link,$sql);
+
+
+		}
+		elseif(isset($_GET['chadd'])&&$_GET['chadd']!="on")
+		{
+				$id=$_GET['chadd'];
+				$chasql="SELECT * FROM addressee WHERE Account='$ac'AND AddId='$id'";
+				$charesult=mysqli_query($link,$chasql);
+			    if(mysqli_num_rows($charesult)>0)
+		        {	
+		        	
+		        
+		        	while($charow = mysqli_fetch_array($charesult))
+		            {
+		            	$name=$charow[2];
+		            	$add=$charow[3];
+		            	$tel=$charow[4];
+		            	final2($name,$add,$tel);
+		            	
+		            }
+			}
+		
+		}
+		else echo"<script>alert('請完整填寫資料');history.go(-1);</script>";
+		
+	}
+		else echo"<script>alert('請先登入帳號');location.href='BuyList.php';</script>";
+	function final2($name,$add,$tel)
+	{
+		
+		$ac=$_COOKIE['user'];
+		include ("dblink.php");
 			$file=fopen('buyid.txt','r');
 
 			$num=fgets($file);
 			fclose($file);
 
-			$ac=$_COOKIE['user'];
+			
 			$sql="SELECT * FROM buycar WHERE Account ='$ac'";
 			$result=mysqli_query($link,$sql);
 		    if(mysqli_num_rows($result)>0)
@@ -125,12 +178,7 @@
 	        session_start();
 	        unset($_SESSION['gwc']);
 	        echo "<script>alert('訂購成功\\n請前去歷史訂單查看');location.href='BuyList.php';</script>";
-		}
-		else{
-			echo"<script>alert('資料不可為空')</script>";
-		}
 	}
-	else echo"<script>alert('請先登入帳號')</script>"
 	?>
 
 	<?php include("footer.php");?>

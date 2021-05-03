@@ -368,16 +368,27 @@ border-collapse: collapse;
   color:white;
 
 }
-.BuyFinalForm > label
+.BuyFinalForm  label,#addform label,.BuyFinalForm .fonta
 {
   width:100px;
   display: inline-block;
   margin-right: 5px;
 }
-.BuyFinalForm{
+.BuyFinalForm .fontb,.BuyFinalForm input[type="text"]
+{
+  width:200px;
+  display: inline-block ;
+  text-align: left;
+}
+
+.BuyFinalForm,#addform{
   line-height: 30px;
-  text-align: right; 
+   
 }
 .BuyFinalForm [type='submit']{
     margin-top: 10px;
+}
+#addform
+{
+  display:none;
 }

@@ -19,7 +19,7 @@
 	</div>
 	<div class="mc2">
 		<a href="UpdateMember.php"><div>更改帳號資料</div></a>
-		<a href="#"><div>設定常用地址</div></a>
+		<a href="SetAddressee.php"><div>設定常用地址</div></a>
 	</div>
 	<div class="mc2">
 		<a href="SearchForm.php"><div>訂單查詢</div></a>
