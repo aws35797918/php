@@ -37,7 +37,7 @@
 			$result=mysqli_query($link,$sql);
 		    if(mysqli_num_rows($result)>0)
 	        {	
-	        	echo"<div  class='BuyCarTable'><table><tr><th>序列</th><th>手機名稱</th><th>顏色</th><th>容量</th><th>數量</th><th>單價</th></tr>";
+	        	echo"<div  class='BuyCarTable'><table><caption>購物車</caption><tr><th>序列</th><th>手機名稱</th><th>顏色</th><th>容量</th><th>數量</th><th>單價</th></tr>";
 	        	$totalprice=0;
 	        	$count=1;
 	        	while($row = mysqli_fetch_array($result))
@@ -57,7 +57,7 @@
 	            echo"<tr><td colspan='6'>總價為:\$$totalprice</td></tr>";
 	            echo"</table>";
 	            echo"<form method='get' action='BuyFinal.php'class='BuyFinalForm'>
-	            <table>";
+	            <table><tr><th>選取</th><th>訂購人資料</th></tr>";
 
 	            $asql="SELECT * FROM addressee WHERE Account='$ac'";
 	            $aresult=mysqli_query($link,$asql);

@@ -16,9 +16,18 @@
 <body>
 	<?php include("header.php");?>
 	<?php
-
 	$ac=$_COOKIE['user'];
 	include("dblink.php");
+
+	if(isset($_GET['name'])&&!empty($_GET['name'])&&!empty($_GET['add'])&&!empty($_GET['tel']))
+	{
+		$name=$_GET['name'];
+		$tel=$_GET['tel'];
+		$add=$_GET['add'];
+		$sql="INSERT INTO addressee(Account,Name,Telephone,Address)VALUES('$ac','$name','$tel','$add')";
+		$result=mysqli_query($link,$sql);
+
+	}
 
 	if(isset($_GET['delete']))
 	{

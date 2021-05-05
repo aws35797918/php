@@ -177,7 +177,7 @@
 			}
 			$totalprice=0;
 
-			echo"<div  class='BuyCarTable'><table><th>序列</th><th>手機名稱</th><th>顏色</th><th>容量</th><th>數量</th><th>單價</th><th>刪除</th>";
+			echo"<div  class='BuyCarTable'><table><caption>購物車</caption><th>序列</th><th>商品名稱</th><th>顏色</th><th>容量</th><th>數量</th><th>單價</th><th>刪除</th>";
 			foreach ($_SESSION["gwc"] as $i => $value)
 			{	
 				echo "<tr>";

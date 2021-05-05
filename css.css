@@ -157,7 +157,7 @@ body{
   table-layout: fixed;
 }
 
-#inf caption {
+#inf caption ,.BuyCarTable caption{
   font-size: 1.5em;
   margin: .5em 0 .75em;
 }
@@ -391,4 +391,21 @@ border-collapse: collapse;
 #addform
 {
   display:none;
+}
+.like img
+{
+  width:50px;
+
+}
+.like{
+  text-align: center;;
+  border: 1px solid;
+  background-color: white;
+  width:60px;
+  
+  
+  position: fixed;
+  right:10px;
+  top:60px  ;
+  border-radius: 5px;
 }

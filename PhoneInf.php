@@ -5,8 +5,9 @@
 		<title>**通信行</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		 <link rel="stylesheet" type="text/css" href="css.css" /> 
+		
 	</head>
-	<body >
+	<body>
 		<?php
 		if(empty($_GET['phone']))
 		{
@@ -15,8 +16,42 @@
 		else
 		{
 			include("header.php");
+
 		
 			include("dblink.php");
+			if(isset($_COOKIE['user']))
+			{
+
+				$phone=$_GET['phone'];
+				$ac=$_COOKIE['user'];
+
+				if(isset($_GET['like']))
+				{
+
+					$sql="INSERT INTO memberlike(Account,Phone)VALUES('$ac','$phone')";
+					$result=mysqli_query($link,$sql);
+				}
+
+				if(isset($_GET['unlike']))
+				{
+					$sql="DELETE FROM memberlike WHERE Account='$ac'AND Phone='$phone'";
+					$result=mysqli_query($link,$sql);
+				}
+				
+				$sql="SELECT * FROM memberlike  WHERE Account='$ac'AND Phone='$phone'";
+
+				$result=mysqli_query($link,$sql);
+				echo "<div class='like'><p> 喜歡</p>";
+				if(mysqli_num_rows($result)>0)
+				{
+					echo"<a href='PhoneInf.php?phone=$phone&unlike=1'><img src='img/like_y.png' ></a>";
+				}
+				else
+				{
+					echo"<a href='PhoneInf.php?phone=$phone&like=1' ><img src='img/like_n.png' ></a>";
+				}
+				echo"</div>";
+			}
 
 			$sql="SELECT phoneinformation.* ,phonebrand.Brand FROM phoneinformation LEFT JOIN phonebrand ON phoneinformation.Phone=phonebrand.Phone WHERE phoneinformation.Phone = '".$_GET['phone']."'";
 
