@@ -232,12 +232,13 @@ text-decoration: none;
 	 justify-content: center;
 	 height: calc(100vh - 100px - 20%);
 }
-#us{
+.us{
 	padding: 20px;
 	display: flex;
 	align-items:top;
+
 }
-#ustext{
+.ustext{
   margin: auto;
 }
 #madiv{
@@ -418,7 +419,7 @@ border-collapse: collapse;
   width:78px;
 }
 .AAAA{
-  max-width: 700px;
+  max-width: 600px;
 }
 dl, ol, ul
 {
@@ -430,3 +431,11 @@ dl, ol, ul
 *, ::after, ::before {
     box-sizing: content-box;
 }
+iframe{
+  margin: 0 auto;
+}
+a:hover { 
+
+color:#fff;
+text-decoration:none;
+} 

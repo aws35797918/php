@@ -14,7 +14,7 @@
 </head>
 <body>
 	<?php include("header.php");?>
-	<div id="us">
+	<div class="us">
 	<div class="container AAAA">
 	<div id="carouselarea" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -50,10 +50,13 @@
 	</div>
 	</div>
 	
-	<div id="ustext">傳統通信行，開了有20年，秉持著童叟無欺的理念營業至今。</div>
+	<div class="ustext">傳統通信行，開了有20年，秉持著童叟無欺的理念營業至今。</div>
 
 	</div>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14573.902950361897!2d120.439164!3d24.0495459!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3d0a6d8b83f287!2z5YWo55CD6YCa6YCa6KiK5buj5aC0LeaWsOe-qemAmuS_oeihjA!5e0!3m2!1szh-TW!2stw!4v1620709773671!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	<div class="us">
+		<div class="ustext">傳統通信行，開了有20年，秉持著童叟無欺的理念營業至今。</div>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14573.902950361897!2d120.439164!3d24.0495459!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3d0a6d8b83f287!2z5YWo55CD6YCa6YCa6KiK5buj5aC0LeaWsOe-qemAmuS_oeihjA!5e0!3m2!1szh-TW!2stw!4v1620709773671!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</div>
 
 	<?php include("footer.php");?>
 </body>
