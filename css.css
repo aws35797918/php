@@ -14,6 +14,7 @@ body{
   	width: 100%;
   	background-color: black;
   	color:white;
+    z-index:9999;
   }
   header ul{
     display: inline;
@@ -236,6 +237,9 @@ text-decoration: none;
 	display: flex;
 	align-items:top;
 }
+#ustext{
+  margin: auto;
+}
 #madiv{
   display: flex;
   justify-content:center;
@@ -408,4 +412,21 @@ border-collapse: collapse;
   right:10px;
   top:60px  ;
   border-radius: 5px;
+}
+.mp
+{
+  width:78px;
+}
+.AAAA{
+  max-width: 700px;
+}
+dl, ol, ul
+{
+  
+    margin: 13px 0;
+    
+
+} 
+*, ::after, ::before {
+    box-sizing: content-box;
 }

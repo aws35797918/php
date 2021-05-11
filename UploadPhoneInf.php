@@ -49,7 +49,7 @@
 
 
 
-		<form  action="UpdatePhoneInf.php" method="post">
+		<form  action="UploadPhoneInf.php" method="post">
 		<table>
 			<tr>
 			<td>手機</td>

@@ -74,7 +74,8 @@
 
 
 		<form  action="UploadPhoneInf2.php" method="post">
-		
+			<table>
+			<tr><td>
 			<select  name="PhoneName">
 				
 				<?php
@@ -91,7 +92,8 @@
 				?>
 
 			</select>
-			<br>
+			</td></tr>
+			<tr><td>
 			顏色種類
 			<select  id="colornum" name="ColorNum" onchange="colorbox()">
 				<?php 
@@ -102,15 +104,15 @@
 				}
 				?>
 			</select>
-
-
+			</td></tr>
+			<tr><td>
 			<div id="colorbox">
 				<br><input type='text' name='Color[]'>
 			</div>
-
-
+			</td></tr>
+			<tr><td>
 			記憶體容量種類
-			<select  id="memorynum" name="MemoryNum" onchange="memorybox()">
+			<select  id="memorynum"  name="MemoryNum" onchange="memorybox()">
 				<?php 
 				for($i=1;$i<=5;$i++)
 				{
@@ -119,15 +121,17 @@
 				}
 				?>
 			</select>
-
-
+			</td></tr>
+			<tr><td>
 			<div id="memorybox">
-				<br>容量<input type='text' name='Memory[]'>價格<input type='text' name='Price[]'>
+				<br>容量<input type='text' class='mp' name='Memory[]'>價格<input type='text' class='mp' name='Price[]'>
 			</div>
+			</td></tr>
 
-
-
+			<tr><td>
 			<input type ="submit" value="更新">
+			</td></tr>
+			</table>
 
 
 			<script>
@@ -147,7 +151,7 @@
 					var cn=document.getElementById("memorynum").value;
 					for(var i=1;i<=cn;i++)
 					{
-					document.getElementById("memorybox").innerHTML+="<br>容量<input type='text' name='Memory[]'>價格<input type='text' name='Price[]'>";
+					document.getElementById("memorybox").innerHTML+="<br>容量<input type='text' class='mp' name='Memory[]'>價格<input type='text' class='mp' name='Price[]'>";
 					}
 				}
 			</script>

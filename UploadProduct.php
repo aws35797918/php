@@ -20,7 +20,7 @@
 	<div id="listmiddle"> 
 		
 		
-		<form  enctype="multipart/form-data" action="UpdateProduct.php" method="post">
+		<form  enctype="multipart/form-data" action="UploadProduct.php" method="post">
 		<table>
 			<tr>
 				<td>手機名稱</td>

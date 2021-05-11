@@ -124,8 +124,8 @@
 		        	while($charow = mysqli_fetch_array($charesult))
 		            {
 		            	$name=$charow[2];
-		            	$add=$charow[3];
-		            	$tel=$charow[4];
+		            	$tel=$charow[3];
+		            	$add=$charow[4];
 		            	final2($name,$add,$tel);
 		            	
 		            }

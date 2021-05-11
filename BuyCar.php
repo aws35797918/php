@@ -13,16 +13,11 @@
 		{
 			var se="se".concat(no);
 			var va=document.getElementById(se).value;
-
 			location.href="BuyCar.php?chnum=".concat(no,"&chva=",va);
-
 		}
 	</script>
 
-
-
-	<?php include("header.php");?>
-	<?php 
+	<?php include("header.php");
 	
 	
 
@@ -54,15 +49,7 @@
 			
 		}
 		include("dblink.php");
-		
 
-		// unset($_SESSION['gwc']);
-		// $arr[1]=new BuyCarItem;
-		// 	$arr[1]->SetValue($_POST['phone'],$_POST['color'],$_POST['mem'],1,$_POST['price']);
-		// 	$_SESSION["gwc"]=$arr ;
-
-		// 	echo $_SESSION["gwc"][1]->color;
-		// 	echo count($_SESSION["gwc"]);
 
 		session_start();
 		if(isset($_POST['price']))	
@@ -113,7 +100,6 @@
 							$ph=$_SESSION["gwc"][$i]->phone;
 							$acc=$_COOKIE['user'];
 							$count=$_SESSION["gwc"][$i]->num;
-							
 							$sql="UPDATE buycar SET Count=$count WHERE Account='$acc' AND Phone ='$ph'";
 							mysqli_query($link,$sql);
 							echo "<script>alert('新增購物車成功');history.go(-1);</script>";
@@ -126,7 +112,6 @@
 					$arr[$SessCount]=new BuyCarItem;
 					$arr[$SessCount]->SetValue($_POST['phone'],$_POST['color'],$_POST['mem'],1,$_POST['price']);
 					$_SESSION["gwc"]=$arr;
-
 					$acc=$_COOKIE['user'];
 					$ph=$_SESSION["gwc"][$SessCount]->phone;
 					$color=$_SESSION["gwc"][$SessCount]->color;
@@ -150,8 +135,6 @@
 			$ph=$_SESSION["gwc"][$del]->phone;
 			$sql="DELETE FROM buycar WHERE Account='$acc' AND Phone ='$ph'";
 			mysqli_query($link,$sql);
-			
-
 			unset($_SESSION["gwc"][$del]);
 			$_SESSION["gwc"]=array_values($_SESSION["gwc"]);
 		}
@@ -163,16 +146,12 @@
 				$num=(int)$_GET['chnum'];
 				$value=$_GET['chva'];
 				$_SESSION['gwc'][$num]->num=$value;
-
-
 				$ph=$_SESSION["gwc"][$num]->phone;
 				$acc=$_COOKIE['user'];
 				$count=$_SESSION["gwc"][$num]->num;
 				
 				$sql="UPDATE buycar SET Count=$count WHERE Account='$acc' AND Phone ='$ph'";
 				mysqli_query($link,$sql);
-
-
 
 			}
 			$totalprice=0;
@@ -205,20 +184,18 @@
 			echo "<form class='BuyCarForm' action='BuyFinal.php' method='get'><label for='totalprice'>總價:</label><input type='text' class='totalprice' name='totalprice' value='\$$ftotalprice' readonly='readonly'>
 			<input type='submit'  value='結帳'>
 			</form>";
-			if(count($_SESSION["gwc"])==0||!isset($_SESSION['gwc']))
+			if(count($_SESSION["gwc"])==0)
 			{
 				echo "<script>alert('購物車為空');location.href='BuyList.php';</script>";
-			}
-			
-			
-		}
-
-	
-	
+			}	
+					
+		}	
+		else
+			{
+				echo "<script>alert('購物車為空');location.href='BuyList.php';</script>";
+			}	
 	}
 	
-	
-
 	
 	?>
 	<?php include("footer.php");?>
