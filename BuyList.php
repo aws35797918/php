@@ -4,7 +4,13 @@
 	<head>
 		<title>**通信行</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		 <link rel="stylesheet" type="text/css" href="css.css" /> 
+		 
+		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script> 
+		<link rel="stylesheet" type="text/css" href="css.css" >
 	</head>
 	<body >
 	<?php
@@ -12,8 +18,8 @@
 	include("header.php");
 	?>
 
-		<div id="flextop">
-		<div id="listleft"> 
+		<div id="flextop" class='row'>
+		<div id="listleft" class='col-2'> 
 				<ul><a id="choose" href="BuyList.php">選擇品牌</a>
 					<li class="brand"><a  class="brandlink" href="BuyList.php?Brand=Apple">Apple</a></li>
 					<li class="brand"><a  class="brandlink" href="BuyList.php?Brand=VIVO">VIVO</a></li>
@@ -24,7 +30,7 @@
 				</ul>
 		</div> 
 
-		<div id="listmiddle"> 
+		<div id="listmiddle" class='col-10'> 
 
 			 <?php
 			 
@@ -48,25 +54,25 @@
 			$result=mysqli_query($link,$sql);
 			if(mysqli_num_rows($result)>0)
 			{
-				echo"<div id='listtable'><table>";
+				
 				while($row = mysqli_fetch_array($result))
        			{
 
        			if ($round==0)
 				 {
-					echo "<tr>";
+					echo "<div class='row'>";
 					
 				}
-				echo "<td><a href='PhoneInf.php?phone=".$row['Phone']."'><img src='img/".$row['Phone'].".jpg' class='phimg' ><br>".$row['Phone']."</a></td>";
+				echo "<div class='col-3'><a href='PhoneInf.php?phone=".$row['Phone']."'><img src='img/".$row['Phone'].".jpg' class='phimg' ><br>".$row['Phone']."</a></div>";
 				$round++;
 				if ($round==4)
 				 {
-					echo "</tr>";
+					echo "</div>";
 					$round=0;
 				}
 
 				}
-				echo"</table></div>";
+				
 			}
 
 
