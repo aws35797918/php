@@ -11,7 +11,15 @@
 			<li><a href="BuyList.php">我要購物 |</a></li>
 			<li><a href="AboutUs.php">關於我們 |</a></li>
 			<li><a href="BuyCar.php">購物車 |</a></li>
-			<li><a href="MemberCenter.php">會員中心</a></li>
+			<li>會員中心
+				<ul>
+					<li><a href="UpdateMember.php"><div>更改帳號資料</div></a></li>
+					<li><a href="SetAddressee.php"><div>設定常用地址</div></a></li>
+					<li><a href="SearchForm.php"><div>訂單查詢</div></a></li>
+					<li><a href="LikeItem.php"><div>我的最愛</div></a></li>
+				</ul>
+
+			</li>
 
 			
 		</ul>
