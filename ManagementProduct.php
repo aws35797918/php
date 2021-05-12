@@ -14,7 +14,7 @@
 		include("adminleft.php");
 		?>
 
-		<div id="listmiddle"> 
+		<div id="adminmiddle"> 
 		<?php
 
 

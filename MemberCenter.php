@@ -23,7 +23,7 @@
 	</div>
 	<div class="mc2">
 		<a href="SearchForm.php"><div>訂單查詢</div></a>
-		<a href="#"><div>我的最愛</div></a>
+		<a href="LikeItem.php"><div>我的最愛</div></a>
 	</div>
 
 

@@ -6,12 +6,13 @@
 			 		echo "<script>alert('登出成功!');window.location.href='BuyList.php';</script>";
 			  }
 ?>
-<header>
+<header >
 		<ul class="left">
 			<li><a href="BuyList.php">我要購物 |</a></li>
 			<li><a href="AboutUs.php">關於我們 |</a></li>
 			<li><a href="BuyCar.php">購物車 |</a></li>
 			<li><a href="MemberCenter.php">會員中心</a></li>
+
 			
 		</ul>
 		<ul class="right">

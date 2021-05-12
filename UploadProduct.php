@@ -17,7 +17,7 @@
 		include("adminleft.php");
 		?>
 
-	<div id="listmiddle"> 
+	<div id="adminmiddle"> 
 		
 		
 		<form  enctype="multipart/form-data" action="UploadProduct.php" method="post">
