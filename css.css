@@ -14,17 +14,127 @@ body{
   	width: 100%;
   	background-color: black;
   	color:white;
-    z-index:9999;
+    z-index:999;
   }
-  header ul{
-    display: inline;
+  
 
+  @media (max-width: 991px)
+  {
+    header ul{
+      font-size: 25pt;
+      margin: 0;
+        list-style: none;
+        padding-left: 0;
+        width:100%;
+        
+
+    }
+    header li
+    {
+      border-top:0.5px solid;
+      text-align: center
+      
+    }
+    header li>a
+    {
+      color:white;
+    }
+
+    header ul ul li{
+      /*display: none;*/
+        
+    }
+    .hambtn{
+      position: relative;
+      top: 15%;
+      left:2%;
+      height: 70%;
+      background:none;
+      border: none;
+      }
+      .hambtn>img{
+        height: 100%;
+
+      }
+    .hamdiv{
+      position: absolute;
+      top:0;
+      left:-60%;
+      background-color: gray;
+      color:white;
+      width:60%;
+      height: 100vh;
+      z-index:1111;
+    }
   }
 
+ @media (min-width: 992px) {
+  .hambtn{
+    display: none
+  }
+  ul.left ul {
+        border: #ccc 1px solid;
+        position: absolute;
+        z-index: 99999;
+        left: -1px;
+        top: 100%;
+       min-width: 120px;
+    }
+ul.left ul { /*隱藏次選單*/
+        display: none;
+    }
+
+ul.left li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+ul.left ul li {
+    border-bottom: #ccc 1px solid;
+    display: list-item;
+    background-color: black;
+    color:white;
+    list-style-type: none; 
+
+    
+
+}
+ul.left ul li div{
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+ul.left ul li:hover {
+    
+    /*background-color: gray;
+    color:black;*/
+    
+    text-decoration:underline
+}
+
+ul.left ul li:last-child {
+    border-bottom: none;
+}
+ ul.left li {
+        position: relative;
+        white-space: nowrap;
+        /*border-right: #ccc 1px solid;*/
+    }
+ul { /* 取消ul預設的內縮及樣式 */
+        margin: 13px 0 0;
+                
+    }
+ul ul{ /* 取消ul預設的內縮及樣式 */
+        margin:0;
+        padding: 0;
+        
+    }
   header .right{
     position: absolute;
     right:2px;
     padding-right:  40px;
+  }
+  header ul{
+    display: inline;
   }
   header .left{
     position: absolute;
@@ -32,16 +142,19 @@ body{
     padding-left:  40px;
   
   }
-
   header ul li{
 
-  	
-  	display:inline;
+    
+    display:inline;
   }
   header ul li a
   {
-  	color:white;
+    color:white;
   }
+}
+  
+
+  
   table{
   	margin: 20px auto;
   	width:100%;
@@ -465,59 +578,4 @@ div[class|='col']{
   justify-content: flex-end;
 
 }
-ul.left ul {
-        border: #ccc 1px solid;
-        position: absolute;
-        z-index: 99999;
-        left: -1px;
-        top: 100%;
-       min-width: 120px;
-    }
-ul.left ul { /*隱藏次選單*/
-        display: none;
-    }
 
-ul.left li:hover > ul { /* 滑鼠滑入展開次選單*/
-        display: block;
-    }
-ul.left ul li {
-    border-bottom: #ccc 1px solid;
-    display: list-item;
-    background-color: black;
-    color:white;
-    list-style-type: none; 
-
-    
-
-}
-ul.left ul li div{
-   height: 30px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-ul.left ul li:hover {
-    
-    /*background-color: gray;
-    color:black;*/
-    
-    text-decoration:underline
-}
-
-ul.left ul li:last-child {
-    border-bottom: none;
-}
- ul.left li {
-        position: relative;
-        white-space: nowrap;
-        /*border-right: #ccc 1px solid;*/
-    }
-ul { /* 取消ul預設的內縮及樣式 */
-        margin: 13px 0 0;
-                
-    }
-ul ul{ /* 取消ul預設的內縮及樣式 */
-        margin:0;
-        padding: 0;
-        
-    }

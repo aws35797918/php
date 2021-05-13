@@ -100,7 +100,7 @@ if(isset($_GET['Brand']))
 	<?php
 	include("header.php"); 
 	?>
-		<div class='container'>
+		
 		
 		<!-- <div id="listleft" class='col-1  col-md-2'> 
 				<ul><a id="choose" href="BuyList.php">選擇品牌</a>
@@ -192,7 +192,7 @@ if(isset($_GET['Brand']))
 
 		
 	
-	</div>
+	
 	<?php
 	include("footer.php");
 	?>
