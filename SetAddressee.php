@@ -43,7 +43,8 @@
 
 	$sql="SELECT * FROM addressee WHERE Account='$ac'";
     $result=mysqli_query($link,$sql);
-    echo"<table>";
+
+    echo"<div class='deftb'><table><tr><th>項目</th><th>訂購資料</th><th>刪除</th></tr>";
     if(mysqli_num_rows($result)>0)
     {	
     	$count=1;
@@ -65,7 +66,7 @@
     <label for='name'>收件人</label><input name='name' id='addform1' type='text'  ><br>
     <label for='tel'>電話</label><input name='tel' id='addform2' type='text' ><br>
     <label for='add'>地址</label><input name='add' id='addform3' type='text'  ><br>
-    <input type='submit'></form></td></tr></table>";
+    <input type='submit'></form></td></tr></table></div>";
 
 	?>
 	<td colspan=""> 

@@ -459,9 +459,14 @@ text-decoration: none;
   min-height:calc(100vh - 163px);
   margin: 0 20px;
 }
-.BuyCarTable table,#adminmiddle table
+.BuyCarTable table,#adminmiddle table,.deftb table
 {
 border-collapse: collapse;
+
+}
+.deftb 
+{
+  margin: 0 20px;
 
 }
 #adminmiddle table
@@ -469,20 +474,20 @@ border-collapse: collapse;
   margin: 20px auto;
   width:90%;
 }
-.BuyCarTable tr:hover,#adminmiddle tr:hover
+.BuyCarTable tr:hover,#adminmiddle tr:hover,.deftb tr:hover
 {
   background-color: rgba(135,206,235, 0.9);
 }
-.BuyCarTable tr,#adminmiddle tr
+.BuyCarTable tr,#adminmiddle tr,.deftb tr
 {
   border:1px black solid;
 
 }
-.BuyCarTable th,.BuyCarTable td,#adminmiddle th,#adminmiddle td
+.BuyCarTable th,.BuyCarTable td,#adminmiddle th,#adminmiddle td,.deftb th,.deftb td
 {
   padding: 10px;
 }
-.BuyCarTable th,#adminmiddle th
+.BuyCarTable th,#adminmiddle th,.deftb th
 {
   background-color:gray;
   color:white;

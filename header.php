@@ -54,8 +54,8 @@
 			
 		</ul>
 		<ul class="left">
+			<li><a href="index.php">首頁 </a></li>
 			<li><a href="BuyList.php">我要購物 </a></li>
-			<li><a href="AboutUs.php">關於我們 </a></li>
 			<li><a href="BuyCar.php">購物車 </a></li>
 			<li>會員中心
 				<ul>

@@ -144,14 +144,19 @@
 				}
 
 
+
 								
 					echo"		
 
 					
-					 
-					
-
-					document.getElementById('PriceBox').value=arr[m];
+					 if(typeof(arr[m])=='undefined')
+					 {
+					 	document.getElementById('PriceBox').value='???';
+					 }
+					else
+					{
+						document.getElementById('PriceBox').value=arr[m];
+					}
 							}
 
 
