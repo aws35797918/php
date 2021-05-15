@@ -1,7 +1,7 @@
 
 body{
     margin: 0 auto;
-    font-size: 13px;
+    font-size: 16px;
     color: #444;
     font-family: 微軟正黑體, Arial, sans-serif;
     background: #202020;
@@ -69,6 +69,11 @@ body{
   }
 
  @media (min-width: 992px) {
+  .hamdiv{
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
   .hambtn{
     display: none
   }
@@ -99,6 +104,7 @@ ul.left ul li {
 }
 ul.left ul li div{
    height: 30px;
+   margin: 0 10px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -135,6 +141,7 @@ ul ul{ /* 取消ul預設的內縮及樣式 */
   }
   header ul{
     display: inline;
+    font-size: 14pt;
   }
   header .left{
     position: absolute;
@@ -142,9 +149,9 @@ ul ul{ /* 取消ul預設的內縮及樣式 */
     padding-left:  40px;
   
   }
-  header ul li{
+  header ul>li{
 
-    
+    padding:0 10px;
     display:inline;
   }
   header ul li a
@@ -261,9 +268,10 @@ ul ul{ /* 取消ul預設的內縮及樣式 */
 }
 
 
-
-
-
+#inf p
+{
+margin: 0.75em 0;
+}
 #inf{
   border: 1px solid #ccc;
   border-collapse: collapse;
@@ -583,4 +591,11 @@ div[class|='col']{
   justify-content: flex-end;
 
 }
+.mapdiv,.photodiv{
+  padding: 0 15px;
+  margin: 5% 0;
+  min-height: 340px;
+}
+
+
 

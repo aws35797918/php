@@ -6,11 +6,13 @@
 			 		echo "<script>alert('登出成功!');window.location.href='BuyList.php';</script>";
 			  }
 ?>
+
 <script
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
 <script type="text/javascript">
+	
 	$(function(){
 	$(".hambtn").click( hamdivin);
 
@@ -25,10 +27,24 @@
 		$(".hamdiv").animate({left:'-70%'});
 	}
 
-
+	if(readCookie("user")==null)
+	{
+		$(".left>li:nth-child(4)").css("display","none");
+	}
+	
 
 	});
 	
+	function readCookie(name) {
+   var nameEQ = name + "=";
+   var ca = document.cookie.split(';');
+   for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+   }
+   return null;
+}
 	
 </script>
 <header >
@@ -72,6 +88,7 @@
 		
 	</div>
 	</header>
+	<div class='container'>
 	<div class="center">
 	<div class="padding">
-	<div class='container'>
+	
