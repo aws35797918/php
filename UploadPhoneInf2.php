@@ -8,12 +8,7 @@
 </head>
 <body>
 	<?php include("header.php");?>
-	<div id="flextop">
-		<?php
-		include("adminleft.php");
-		?>
-
-	<div id="adminmiddle">
+	
 		<?php
 			include("dblink.php");
 			
@@ -72,9 +67,12 @@
 
 
 
-
+		<div class="deftb">
 		<form  action="UploadPhoneInf2.php" method="post">
 			<table>
+			<tr>
+			<th>手機上傳步驟:3</th>
+			</tr>
 			<tr><td>
 			<select  name="PhoneName">
 				
@@ -129,10 +127,11 @@
 			</td></tr>
 
 			<tr><td>
-			<input type ="submit" value="更新">
+			<input type ="submit" value="上傳">
 			</td></tr>
 			</table>
-
+			</form>
+		</div>
 
 			<script>
 				function colorbox()
@@ -156,11 +155,10 @@
 				}
 			</script>
 		
-		</form>
+		
 
 		
-	</div>
-	</div>
+	
 	<?php include("footer.php");?>
 	
 </body>

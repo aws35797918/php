@@ -43,19 +43,19 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="images/photo01.jpg" alt="Photo1">
+				<img class="d-block w-100" src="img/aboutus1.jpg" alt="店面外觀">
 				<div class="carousel-caption">Photo1</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="images/photo02.jpg" alt="Photo2">
+				<img class="d-block w-100" src="img/aboutus2.jpg" alt="店內場景1">
 				<div class="carousel-caption">Photo2</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="images/photo03.jpg" alt="Photo3">
+				<img class="d-block w-100" src="img/aboutus3.jpg" alt="店內場景2">
 				<div class="carousel-caption">Photo3</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="images/photo04.jpg" alt="Photo4">
+				<img class="d-block w-100" src="img/aboutus4.jpg" alt="店內場景3">
 				<div class="carousel-caption">Photo4</div>
 			</div>
 		</div>

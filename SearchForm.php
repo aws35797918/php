@@ -49,7 +49,8 @@
 		if(mysqli_num_rows($result)>0)
 		{	
 			$totalprice=0;
-			echo"<div class='deftb'><table><tr><th>訂貨人</th><th>電話</th><th>地址</th><th>訂貨時間</th></tr>";
+			echo"<div class='deftb'><table><tr><th>訂貨人</th><th>電話</th><th>電話</th><th>地址</th></tr>";
+			
 			while($row = mysqli_fetch_array($result))
 			{
 				echo "

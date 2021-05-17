@@ -12,16 +12,13 @@
 	
 
 	include("header.php");?>
-	<div id="flextop">
-		<?php
-		include("adminleft.php");
-		?>
-
-	<div id="adminmiddle"> 
-		
-		
+	
+		<div class="deftb">
 		<form  enctype="multipart/form-data" action="UploadProduct.php" method="post">
 		<table>
+			<tr>
+				<th colspan="2">手機上傳步驟:1</th>
+			</tr>
 			<tr>
 				<td>手機名稱</td>
 				<td><input type="text" name="Phone"></td>
@@ -51,14 +48,15 @@
 		    	<td colspan="2"><input type="file" name="Photo"></td>
 		    </tr>
 		    <tr>
-		    	<td colspan="2"><input type="submit" value="上傳"></td>
+		    	<td colspan="2"><input type="submit" value="下一步"></td>
 		    </tr>
 		   </table>
         
 
         
-        </table>
+        
         </form>
+    	</div>
 
 
 
@@ -89,7 +87,7 @@
 						echo"...";
 						$upsql="INSERT INTO  phonebrand(Phone,Brand)VALUE('$Phone','$Brand')";
 						$result=mysqli_query($link,$upsql);	
-						if($result){echo "<Script language='javascript'>alert('上傳成功');</Script>";}
+						if($result){echo "<Script language='javascript'>location.href='UploadPhoneInf.php';</Script>";}
 						
 						else{echo "<Script language='javascript'>alert('請完整填寫表單');</Script>";}
 					}
@@ -98,8 +96,7 @@
 			mysqli_close($link);
         ?>
 		
-	</div>
-	</div>
+	
 	<?php include("footer.php");?>
 	
 </body>

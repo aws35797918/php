@@ -4,17 +4,21 @@
 		<title>商品管理</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link rel="stylesheet" type="text/css" href="css.css" /> 
+		<script type="text/javascript">
+			function goadd()
+			{
+				
+				window.location.href='UploadProduct.php';
+			}
+		</script>
 	</head>
 	<body>
 		<?php
 		include("header.php");
 		?>
-		<div id="flextop">
-		<?php
-		include("adminleft.php");
-		?>
+		
 
-		<div id="adminmiddle"> 
+		
 		<?php
 
 
@@ -45,7 +49,7 @@
 		$result=mysqli_query($link,$sql);
 		if(mysqli_num_rows($result)>0)
 		{
-			echo"<form action='ManagementProduct.php' method='post'>";
+			echo"<div class='deftb'><form action='ManagementProduct.php' method='post'>";
 
 			echo "<table>";
 	            echo "<tr>";
@@ -63,22 +67,25 @@
 	           	
 	           	echo"<td>".$row['Phone']."</td>";
 	           	echo"<td>".$row['Brand']."</td>";
+	           	
+	           	$row['Phone']=str_replace('+','%2B',$row['Phone']);
+	           	
 	           	echo"<td><a href='EditPhoneInf.php?phone=".$row['Phone']."'>編輯</a></td>";
 	           	echo"<td><a href='#'>刪除</a></td>";
 	           	echo"<tr>";
 	           }
 	        echo"</table>";
 
-	        echo "<input type='submit' value='刪除'>";
+	        echo "<input type='submit' value='刪除'></form><button onclick='goadd()'>新增</button></div>";
 
 		}
 
 
 
+
 		mysqli_close($link);
 		?>
-		</div>
-		</div>
+		
 		<?php
 
 		include("footer.php");

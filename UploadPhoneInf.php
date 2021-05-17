@@ -8,12 +8,7 @@
 </head>
 <body>
 	<?php include("header.php");?>
-	<div id="flextop">
-		<?php
-		include("adminleft.php");
-		?>
-
-	<div id="adminmiddle">
+	
 		<?php
 			include("dblink.php");
 
@@ -35,7 +30,7 @@
 
 				$sql="INSERT INTO phoneinformation(Phone,OsVer,ProcessorName,ScreenSize,CameraPixel,Ram,Rom,Battery,FiveG,Detail) VALUES('$PhN','$OV','$PrN','$SS','$CP','$Ram','$Rom','$Battery','$FG','$Detail') ";
 				$result=mysqli_query($link,$sql);
-				if($result){echo "<Script language='javascript'>alert('上傳成功');</Script>";}
+				if($result){echo "<Script language='javascript'>location.href='UploadPhoneInf2.php';</Script>";}
 				else{echo "<Script language='javascript'>alert('請填寫表格');</Script>";}
 			}
 			
@@ -47,10 +42,12 @@
 
 
 
-
+		<div class="deftb">
 
 		<form  action="UploadPhoneInf.php" method="post">
 		<table>
+			<tr>
+			<th colspan="2">手機上傳步驟:2</th>
 			<tr>
 			<td>手機</td>
 			<td>
@@ -83,15 +80,14 @@
 			<tr><td>5G</td><td>是<input type="radio" name="FiveG" value=1>
 			否<input type="radio" name="FiveG" value=0></td></tr>
 			<tr><td>詳細說明</td><td><textarea name="Detail"></textarea></td></tr>
-			<tr><td colspan="2"><input type ="submit" value="更新"></td></tr>
+			<tr><td colspan="2"><input type ="submit" value="下一步"></td></tr>
 
 		</table>
 		
 		</form>
-
+	</div>
 		
-	</div>
-	</div>
+		
 	<?php include("footer.php");?>
 	
 </body>

@@ -13,6 +13,7 @@
 		include("dblink.php");
 		if(isset($_GET['phone']))
 		{
+			echo "<script>alert(".$_GET['phone'].");</script>";
 			$sql="SELECT phoneinformation.* ,phonebrand.Brand FROM phoneinformation LEFT JOIN phonebrand ON phoneinformation.Phone=phonebrand.Phone WHERE phoneinformation.Phone = '".$_GET['phone']."'";
 			
 

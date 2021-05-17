@@ -14,6 +14,11 @@
 <script type="text/javascript">
 	
 	$(function(){
+
+	if(readCookie("user")=="admin0315")
+	{
+		$(".left").append("<li>管理頁面<ul><li><a href='ManagementProduct.php'><div>商品管理</div></a></li><li><a href='AdminForm.php'><div>銷量分析</div></a></li></ul><il>")
+	}
 	$(".hambtn").click( hamdivin);
 
 	function hamdivin()
@@ -55,13 +60,13 @@
 			if(isset ($_COOKIE['user'])&&$_COOKIE['user']!="")
 			{
 
-				echo "<li>Hi! ".$_COOKIE['user']."  </li>";
-				echo "<li><a href='BuyList.php?logout=1'>登出</a></li>";
+				echo "<li>Hi! ".$_COOKIE['user'];
+				echo "<ul><li><a href='BuyList.php?logout=1'><div>登出</div></a></li></ul></li>";
 			}
 			else
 			{
 				echo "<li><a href='MemberLogin.php'>會員登入 </a></li>";
-				echo "<li><a href='AdminLogin.php'>管理員登入</a></li>";
+				
 			}
 
 
