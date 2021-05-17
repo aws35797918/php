@@ -21,7 +21,7 @@ body{
   @media (max-width: 991px)
   {
     header ul{
-      font-size: 25pt;
+      font-size: 20pt;
       margin: 0;
         list-style: none;
         padding-left: 0;
@@ -29,10 +29,11 @@ body{
         
 
     }
-    header li
+    header li 
     {
       border-top:0.5px solid;
-      text-align: center
+      text-align: left;
+      padding-left: 5%;
       
     }
     header li>a
@@ -41,7 +42,9 @@ body{
     }
 
     header ul ul li{
-      /*display: none;*/
+      display: none;
+      background-color: gray;
+      margin-left:-5%;  
         
     }
     .hambtn{
@@ -57,14 +60,28 @@ body{
 
       }
     .hamdiv{
+
       position: absolute;
       top:0;
-      left:-60%;
-      background-color: gray;
+      left:-70%;
+      background-color: black;
+      border-right: 1px white solid;
       color:white;
       width:60%;
       height: 100vh;
       z-index:1111;
+    }
+    .hamdivout
+    {
+      position: absolute;
+      width:100%;
+      top:0;
+      left:0;
+      height: 100vh;
+      z-index:1110;
+      background-color: rgba(0,0,0,0.7);
+      display: none;
+
     }
   }
 
@@ -89,7 +106,7 @@ header ul.right ul {
         border: #ccc 1px solid;
         position: absolute;
         z-index: 99999;
-        right: -1px;
+        right: 10px;
         top: 100%;
        min-width: 120px;
     }
@@ -339,24 +356,25 @@ text-decoration: none;
 
 
 
-.login{
-	width:200px;
-	height:40px;
-	background-color: #afafaf;
-	border-style: none;
-	margin: 10px auto;
-	padding: 10px;
-	border-radius: 5px;
 
-}
 #logindiv{
 	text-align: center;
-	display: flex;
 	 margin: 0 auto;
 	 padding-top: 20%;
 
 	 justify-content: center;
 	 height: calc(100vh - 100px - 20%);
+}
+
+.login{
+  width:200px;
+  height:40px;
+  background-color: #d3d3d3;
+  border-style: none;
+  margin: 1%;
+  padding: 10px;
+  border-radius: 5px;
+
 }
 .us{
 	padding: 20px;
@@ -368,9 +386,9 @@ text-decoration: none;
   margin: auto;
 }
 #madiv{
-  display: flex;
   justify-content:center;
   text-align: center;
+  padding-top: 10%;
 }
 
 .mc1
@@ -497,7 +515,7 @@ border-collapse: collapse;
 }
 .BuyCarTable th,.BuyCarTable td,.deftb th,.deftb td
 {
-  padding: 10px;
+  padding: 10px 2px;
 }
 .BuyCarTable th,.deftb th
 {
