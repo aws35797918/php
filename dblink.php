@@ -1,4 +1,4 @@
 <?php
-	$link=mysqli_connect("sql303.byethost22.com","b22_28435116","s7766006","b22_28435116_sy");
+	$link=mysqli_connect("127.0.0.1","root","","sy");
 	mysqli_query($link,"SET NAMES 'utf8'");
 ?>
