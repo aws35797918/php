@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css.css" /> 
-	<title>Document</title>
+	<link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+	<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
+	<title>新義全球通-新增產品</title>
 </head>
 <body>
 	<?php include("header.php");?>
@@ -44,7 +46,7 @@
 
 
 				
-				echo"<script>alert('成功新增".$ccount."筆顏色資料 成功新增".$mcount."筆記憶體資料')</script>
+				echo"<script>alert('成功新增".$ccount."筆顏色資料 成功新增".$mcount."筆記憶體資料');location.href='ManagementProduct.php'</script>
 
 				";
 

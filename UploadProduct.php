@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css.css" /> 
-	<title>Document</title>
+	<link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+	<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
+	<title>新義全球通-新增產品</title>
 </head>
 <body>
 	<?php 

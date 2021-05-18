@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+	<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
 	<link rel="stylesheet" type="text/css" href="css.css" /> 
-	<title>Document</title>
+	<title>新義全球通-訂單管理</title>
 </head>
 <body>
 	<?php 

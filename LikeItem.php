@@ -11,10 +11,12 @@ $round=0;
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>**通信行</title>
+		<title>新義通信行-我的最愛</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		 
 		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		 <link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+		<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/popper.min.js"></script>

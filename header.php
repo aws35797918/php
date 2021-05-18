@@ -18,7 +18,7 @@
 	
 	if(readCookie("user")=="admin0315")
 	{
-		$(".left").append("<li>管理頁面👇<ul><li><a href='ManagementProduct.php'><div>商品管理</div></a></li><li><a href='AdminForm.php'><div>銷量分析</div></a></li></ul><il>")
+		$(".left").append("<li>管理頁面👇<ul><li><a href='ManagementProduct.php'><div>商品管理</div></a></li><li><a href='AdminForm.php'><div>客戶訂單查詢</div></a></li></ul><il>")
 	}
 	if(readCookie("user")==null)
 	{

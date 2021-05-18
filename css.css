@@ -32,7 +32,7 @@ body{
   }
   
 
-  @media (max-width: 991px)
+  @media (max-width: 1199px)
   {
     header ul{
       font-size: 20pt;
@@ -100,7 +100,7 @@ body{
     }
   }
 
- @media (min-width: 992px) {
+ @media (min-width: 1200px) {
   .hamdiv{
     display: flex;
     align-items: center;

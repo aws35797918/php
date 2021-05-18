@@ -2,9 +2,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>**通信行</title>
+		<title>新義全球通-手機資訊</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		 <link rel="stylesheet" type="text/css" href="css.css" /> 
+		 <link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+		<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
+	
 		
 	</head>
 	<body>

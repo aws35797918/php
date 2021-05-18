@@ -11,7 +11,9 @@
 			document.getElementById( 'addform').style.display="block";
 		}
 	</script>
-	<title>Document</title>
+	<link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+	<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
+	<title>新義全球通-設定常用地址</title>
 </head>
 <body>
 	<?php include("header.php");?>

@@ -2,7 +2,7 @@
 <?php
 include("dblink.php");
 $round=0;
-if(isset($_GET['Brand']))
+if(isset($_GET['Brand']))//ajax"B"rand
 
 				{	
 					
@@ -37,12 +37,20 @@ if(isset($_GET['Brand']))
 				for($i=0;$i<=10;$i++)//頁數
 				{
 					$j=$i*20;
+					if($_GET['Brand']=='true')
 					$pgsql="SELECT * FROM phonebrand LIMIT $j,20";//這行要改
+					else
+					$pgsql="SELECT * FROM phonebrand  WHERE Brand = '".$_GET['Brand']."' LIMIT $j,20";
+
 					$result=mysqli_query($link,$pgsql);
 					if(mysqli_num_rows($result)>0)
 						{
 							$k=$i+1;
-							echo "<a href='http://tw.yahoo.com'>$k</a>";
+							if($_GET['Brand']=='true')
+							echo "<a href='BuyList.php?page=$k'>$k</a>";
+							else
+							echo "<a href='BuyList.php?brand=".$_GET['Brand']."&page=$k'>$k</a>";
+							
 						}
 				}
 				echo "</p></div>";
@@ -60,7 +68,7 @@ if(isset($_GET['Brand']))
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>**通信行</title>
+		<title>新義全球通-商品列表</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		 
 		 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,6 +77,8 @@ if(isset($_GET['Brand']))
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script> 
 		<link rel="stylesheet" type="text/css" href="css.css" >
+		<link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+		<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
 		<script type="text/javascript">
 			$(window).ready(function(){
 				$('#choosebrand').change(function(){
@@ -136,7 +146,15 @@ if(isset($_GET['Brand']))
 
 			
 				$sql="SELECT * FROM phonebrand LIMIT 20";
-			
+			if(isset($_GET['page']))
+			{
+				$page=($_GET['page']-1)*20;
+				$sql="SELECT * FROM phonebrand LIMIT $page ,20";
+				if(isset($_GET['brand']))
+				{
+					$sql="SELECT * FROM phonebrand WHERE Brand = '".$_GET['brand']."' LIMIT $page ,20";
+				}
+			}
 
 
 
@@ -171,12 +189,19 @@ if(isset($_GET['Brand']))
 			for($i=0;$i<=10;$i++)//頁數
 			{
 				$j=$i*20;
+				if(!isset($_GET['brand']))
 				$pgsql="SELECT * FROM phonebrand LIMIT $j,20";//這行要改
+				else
+				$pgsql="SELECT * FROM phonebrand  WHERE Brand = '".$_GET['brand']."' LIMIT $j,20";
 				$result=mysqli_query($link,$pgsql);
 				if(mysqli_num_rows($result)>0)
 					{
 						$k=$i+1;
-						echo "<a href='http://tw.yahoo.com'>$k</a>";
+						if(!isset($_GET['brand']))
+						echo "<a href='BuyList.php?page=$k'>$k</a>";
+						else
+						echo "<a href='BuyList.php?brand=".$_GET['brand']."&page=$k'>$k</a>";
+						
 					}
 			}
 			echo "</p></div>";
