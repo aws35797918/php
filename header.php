@@ -80,6 +80,9 @@
 </script>
 <header >
 	<button class="hambtn"><img src="img/hamberger.png"></button>
+	<div class="logo">
+		<img src="img/LOGO.png">新義全球通
+	</div>
 	<div class="hamdiv">
 		<ul class="right">
 			<?php 

@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<title>關於我們</title>
+	<title>新義全球通</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
-
+	<link rel="icon" href="img/LOGO.ico" type="image/x-icon" >
+	<link rel="shortcut icon" href="img/LOGO.ico" type="image/x-icon" >
 	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css.css" > 
 	<script type="text/javascript">
@@ -44,19 +45,19 @@
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img class="d-block w-100" src="img/aboutus1.jpg" alt="店面外觀">
-				<div class="carousel-caption">Photo1</div>
+				<div class="carousel-caption">店面外觀</div>
 			</div>
 			<div class="carousel-item">
 				<img class="d-block w-100" src="img/aboutus2.jpg" alt="店內場景1">
-				<div class="carousel-caption">Photo2</div>
+				<div class="carousel-caption">店內場景1</div>
 			</div>
 			<div class="carousel-item">
 				<img class="d-block w-100" src="img/aboutus3.jpg" alt="店內場景2">
-				<div class="carousel-caption">Photo3</div>
+				<div class="carousel-caption">店內場景2</div>
 			</div>
 			<div class="carousel-item">
 				<img class="d-block w-100" src="img/aboutus4.jpg" alt="店內場景3">
-				<div class="carousel-caption">Photo4</div>
+				<div class="carousel-caption">店內場景3</div>
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselarea" role="button" data-slide="prev">
@@ -67,7 +68,10 @@
 		</a>
 	</div>
 	
-	<div class="ustext col-12 col-lg-6">傳統通信行，開了有20年，秉持著童叟無欺的理念營業至今。</div>
+	<div class="ustext col-12 col-lg-6">
+		<p>
+		新義全球通創始於1990年，主要的服務內容為安裝監視系統、總機、防盜系統，
+		辦理門號轉移、新辦門號(遠傳電信、台灣大哥大、亞太電信、台灣之星及中華電信)…等通訊產品各項業務。</p></div>
 	
 
 	</div>
@@ -79,9 +83,9 @@
 		<div class="ustext col-12 col-lg-6">
 			<p>聯絡電話 : 04-7766006</p>
 
-			<p>聯絡傳真 : 04-7766006</p>
+			<p>聯絡傳真 : 04-7780008</p>
 
-			<p>Email : aws3579@yahoo.com.tw</p>
+			<p>Email : aws35797918@gmail.com</p>
 
 			<p>客服時間 : 每日 10:30-9:40</p>
 
